@@ -474,45 +474,98 @@
 // })
 
 
+// Ext.onReady(function(){
+//     //Ext.grid.Panel
+//     Ext.create("Ext.grid.Panel", {
+//         width : 500,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         columns : [{
+//             text : '컴럼1',
+//             style : 'text.align:center', // 컬럼의 이름만 정렬설정 주기
+//             flex : 1,
+//             align : 'center',
+//             dataIndex : 'c1'
+//         }, {
+//             text : '컴럼2',
+//             flex : 1,
+//             align : 'right',
+//             dataIndex : 'c1'
+//         }, {
+//             text : '컴럼3',
+//             flex : 1,
+//             align : 'left',
+//             dataIndex : 'c1'
+//         }],
+//         store : {
+//             field : ['c1', 'c2', 'c3'],
+//             data : [{
+//                 c1 : '컬럼 1-1',
+//                 c2 : '컬럼 1-2',
+//                 c3 : '컬럼 1-3'
+//             },{
+//                 c1 : '컬럼 2-1',
+//                 c2 : '컬럼 2-2',
+//                 c3 : '컬럼 2-3'
+//             }]
+//         }
+//     })
 
-
+// })
 
 
 
 Ext.onReady(function(){
-    //Ext.grid.Panel
-    Ext.create("Ext.grid.Panel", {
-        width : 500,
-        height : 500,
+    Ext.create("Ext.panel.Panel", {
+        width : 300,
+        height : 300,
         renderTo : Ext.getBody(),
-        columns : [{
-            text : '컴럼1',
-            flex : 1,
-            align : 'center',
-            dataIndex : 'c1'
+        items : [{
+            xtype : 'combo',
+            displayField : 'key',
+            valueField : 'value',
+            store : {
+                fields : ['key', 'value'],
+                // AJAX로 호출해서 데이터를 불러올 때는!
+                // data말고 proxy를 사용합니다!
+                proxy : {
+                    type : 'ajax',
+                    url : '/data/combo.json',
+                    reader : {
+                        type : 'json',
+                        // rootProperty는 가지고 오려는 데이터의
+                        // 최상단 키값! 이것을 명심해주세요!
+                        rootProperty : 'data'
+                    }
+                }
+            }
         }, {
-            text : '컴럼2',
-            flex : 1,
-            align : 'right',
-            dataIndex : 'c1'
-        }, {
-            text : '컴럼3',
-            flex : 1,
-            align : 'left',
-            dataIndex : 'c1'
-        }],
-        store : {
-            field : ['c1', 'c2', 'c3'],
-            data : [{
-                c1 : '컬럼 1-1',
-                c2 : '컬럼 1-2',
-                c3 : '컬럼 1-3'
+            xtype : 'grid',
+            columns : [{
+                text : '컬럼1',
+                dataIndex : 'column1'
+            }, {
+                text : '컬럼2',
+                dataIndex : 'column2'
             },{
-                c1 : '컬럼 2-1',
-                c2 : '컬럼 2-2',
-                c3 : '컬럼 2-3'
-            }]
-        }
+                text : '컬럼3',
+                dataIndex : 'column3'
+            }],
+            store : {
+                autoLoad : true,
+                fields : ['column1', 'column2', 'column3'],
+                proxy : {
+                    type : 'ajax',
+                    url : '/data/grid.json',
+                    reader : {
+                        type : 'json',
+                        rootProperty : 'data'
+                    }
+                }
+            }
+        }]
     })
-
 })
+
+
+
