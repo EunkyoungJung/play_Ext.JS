@@ -1,0 +1,23 @@
+{
+    "children" : [{
+        "text" : ".settings",
+        "expanded" : true,
+        "children" : [{
+            "text" : "org.eclipse.wst.server.core.prefs",
+            "leaf" : true
+        }]
+    },{
+        "text" : "Tomcat v8.0 Server at localhost-config",
+        "expanded" : true,
+        "children" : [{
+            "text" : "catalina.policy",
+            "leaf" : true
+        },{
+            "text" : "catalina.properties",
+            "leaf" : true
+        }]
+    },{
+        "text" : ".project",
+        "leaf" : true
+    }]
+}
