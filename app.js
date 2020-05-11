@@ -647,28 +647,138 @@
 // })
 
 
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 500,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         items : [{
+//             xtype : 'treepanel',
+//             store : {
+//                 root : {
+//                     text : 'Servers',
+//                     expanded : false
+//                 },
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : '/data/tree.json',
+//                     reader : {
+//                         type : 'json'
+//                     }
+//                 }
+//             }
+//         }]
+//     })
+// })
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : 'a',
+//                 flex : 1
+//             },{
+//                 text : 'b',
+//                 flex : 1
+//             },{
+//                 text : 'c',
+//                 flex : 1
+//             }]
+//         }]
+//     })
+// })
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 //pageSize : 5, // 서버로 5개 요청
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             },
+//             // bottom toolbar
+//             bbar : {
+//                 xtype : 'pagingtoolbar',
+//                 // plugins : 'ux-slidingpager',
+//                 plugins : 'ux-progressbarpager',
+//                 displayInfo : true
+//             }
+//         }]
+//     })
+// })
+
+
+
+
 Ext.onReady(function(){
     Ext.create("Ext.panel.Panel", {
-        width : 500,
-        height : 500,
+        width : 800,
+        height : 200,
         renderTo : Ext.getBody(),
+        layout : 'fit',
         items : [{
-            xtype : 'treepanel',
-            store : {
-                root : {
-                    text : 'Servers',
-                    expanded : false
-                },
+            xtype : 'grid',
+            columns : [{
+                text : '시',
+                dataIndex : 'si',
+                flex : 1
+            },{
+                text : '군구',
+                dataIndex : 'gungu',
+                flex : 1
+            },{
+                text : '동',
+                dataIndex : 'dong',
+                flex : 1
+            }],
+            store : Ext.create("Ext.data.BufferedStore", {
+                autoLoad : true,
+                fields : ['si', 'gungu', 'dong'],
                 proxy : {
                     type : 'ajax',
-                    url : '/data/tree.json',
-                    reader : {
-                        type : 'json'
+                    url : "/data/grid2.json",
+                    reader:{
+                        type : 'json',
+                        rootProperty : 'data',
+                        totalProperty : 'total'
                     }
                 }
-            }
+            })
         }]
     })
 })
-
-
