@@ -515,57 +515,160 @@
 
 
 
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 300,
+//         height : 300,
+//         renderTo : Ext.getBody(),
+//         items : [{
+//             xtype : 'combo',
+//             displayField : 'key',
+//             valueField : 'value',
+//             store : {
+//                 fields : ['key', 'value'],
+//                 // AJAX로 호출해서 데이터를 불러올 때는!
+//                 // data말고 proxy를 사용합니다!
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : '/data/combo.json',
+//                     reader : {
+//                         type : 'json',
+//                         // rootProperty는 가지고 오려는 데이터의
+//                         // 최상단 키값! 이것을 명심해주세요!
+//                         rootProperty : 'data'
+//                     }
+//                 }
+//             }
+//         }, {
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '컬럼1',
+//                 dataIndex : 'column1'
+//             }, {
+//                 text : '컬럼2',
+//                 dataIndex : 'column2'
+//             },{
+//                 text : '컬럼3',
+//                 dataIndex : 'column3'
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['column1', 'column2', 'column3'],
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : '/data/grid.json',
+//                     reader : {
+//                         type : 'json',
+//                         rootProperty : 'data'
+//                     }
+//                 }
+//             }
+//         }]
+//     })
+// })
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 500,
+//         height : 500,
+//         renderTo: Ext.getBody(),
+//         items : [{
+//             xtype : 'treepanel',
+//             root : {
+//                 text : '루트패널',
+//                 expanded : false
+//             }
+//         }]
+//     })
+// })
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 500,
+//         height : 500,
+//         renderTo: Ext.getBody(),
+//         items : [{
+//             xtype : 'treepanel',
+//             root : {
+//                 text : 'Servers',
+//                 expanded : false,
+//                 children : [{
+//                     text : '.settings'
+//                 },{
+//                     text : 'Tomcat v8.0 Server at localhost-config'
+//                 },{
+//                     text : '.project',
+//                     leaf : true
+//                 }]
+//             }
+//         }]
+//     })
+// })
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 500,
+//         height : 500,
+//         renderTo: Ext.getBody(),
+//         items : [{
+//             xtype : 'treepanel',
+//             root : {
+//                 text : 'Servers',
+//                 expanded : false,
+//                 children : [{
+//                     text : '.settings',
+//                     expanded : false,
+//                     children : [{
+//                         text : 'org.ecplipse.wst.server.core.prefs',
+//                         leaf : true
+//                     }]
+//                 },{
+//                     text : 'Tomcat v8.0 Server at localhost-config',
+//                     expanded : false,
+//                     children : [{
+//                         text : 'catalina.policy',
+//                         leaf : true
+//                     },{
+//                         text : 'catalina.properties',
+//                         leaf : true
+//                     }]
+//                 },{
+//                     text : '.project',
+//                     leaf : true
+//                 }]
+//             }
+//         }]
+//     })
+// })
+
+
 Ext.onReady(function(){
     Ext.create("Ext.panel.Panel", {
-        width : 300,
-        height : 300,
+        width : 500,
+        height : 500,
         renderTo : Ext.getBody(),
         items : [{
-            xtype : 'combo',
-            displayField : 'key',
-            valueField : 'value',
+            xtype : 'treepanel',
             store : {
-                fields : ['key', 'value'],
-                // AJAX로 호출해서 데이터를 불러올 때는!
-                // data말고 proxy를 사용합니다!
+                root : {
+                    text : 'Servers',
+                    expanded : false
+                },
                 proxy : {
                     type : 'ajax',
-                    url : '/data/combo.json',
+                    url : '/data/tree.json',
                     reader : {
-                        type : 'json',
-                        // rootProperty는 가지고 오려는 데이터의
-                        // 최상단 키값! 이것을 명심해주세요!
-                        rootProperty : 'data'
-                    }
-                }
-            }
-        }, {
-            xtype : 'grid',
-            columns : [{
-                text : '컬럼1',
-                dataIndex : 'column1'
-            }, {
-                text : '컬럼2',
-                dataIndex : 'column2'
-            },{
-                text : '컬럼3',
-                dataIndex : 'column3'
-            }],
-            store : {
-                autoLoad : true,
-                fields : ['column1', 'column2', 'column3'],
-                proxy : {
-                    type : 'ajax',
-                    url : '/data/grid.json',
-                    reader : {
-                        type : 'json',
-                        rootProperty : 'data'
+                        type : 'json'
                     }
                 }
             }
         }]
     })
 })
-
 
 
