@@ -836,64 +836,448 @@
 // })
 
 
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 200,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             plugins : 'cellediting',
+//             //plugins : 'rowediting',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             }],
+//             store : Ext.create("Ext.data.BufferedStore", {
+//                 autoLoad : true,
+//                 autoSync : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 proxy : {
+//                     type : 'ajax',
+//                     // url : "/data/grid2.json",
+//                     api : {
+//                         //create : "/data/grid2.json",
+//                         read : "/data/grid2.json"
+//                         // update : "/data/grid2.json",
+//                         //destroy : "/data/grid2.json",
+//                     },
+//                     reader : {
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     },
+//                     writer : {
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         writeAllFields : false, // 변경사항만 전달
+//                         encode : true // 필수 속성
+//                     }
+//                 }
+//             })
+//         }]
+//     })
+// })
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 //pageSize : 5, // 서버로 5개 요청
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             },
+//             // top toolbar
+//             tbar : [{
+//                 xtype : 'button',
+//                 text : 'tbar button'
+//             }],
+
+//             // bottom toolbar
+//             bbar : [{
+//                 xtype : 'button',
+//                 text : 'bbar button'
+//             }],
+
+//             // left toolbar
+//             lbar : [{
+//                 xtype : 'button',
+//                 text : 'lbar button'
+//             }],
+
+//             // right toolbar
+//             rbar : [{
+//                 xtype : 'button',
+//                 text : 'rbar button'
+//             }],
+
+//             // footer toolbar 근데 잘안씀!
+//             fbar : [{
+//                 xtype : 'button',
+//                 text : 'fbar button'
+//             }]
+
+//         }]
+//     })
+// })
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 //pageSize : 5, // 서버로 5개 요청
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             },
+//             dockedItems : [{
+//                 xtype : 'toolbar',
+//                 dock : 'top',
+//                 items : [{
+//                     text : 'dockedItems Toolbar'
+//                 }]
+//             }],
+//             // top toolbar
+//             tbar : [{
+//                 xtype : 'button',
+//                 text : 'tbar button'
+//             }],
+
+//             // bottom toolbar
+//             bbar : [{
+//                 xtype : 'button',
+//                 text : 'bbar button'
+//             }],
+
+//             // left toolbar
+//             lbar : [{
+//                 xtype : 'button',
+//                 text : 'lbar button'
+//             }],
+
+//             // right toolbar
+//             rbar : [{
+//                 xtype : 'button',
+//                 text : 'rbar button'
+//             }],
+
+//             // footer toolbar 근데 잘안씀!
+//             fbar : [{
+//                 xtype : 'button',
+//                 text : 'fbar button'
+//             }]
+
+//         }]
+//     })
+// })
+
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 //pageSize : 5, // 서버로 5개 요청
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             },
+//             // top toolbar
+//             tbar : [{
+//                 xtype : 'button',
+//                 text : '추가'
+//             },{
+//                 xtype : 'combo',
+//                 displayField: 'key',
+//                 valueField : 'value',
+//                 queryMode : 'local', // 하드코딩일 때는 반드시 설정!
+//                 store : {
+//                     fields : ['key', 'value'],
+//                     data : [{
+//                         key: '선택1',
+//                         value : '값1'
+//                     },{
+//                         key: '선택2',
+//                         value : '값2'
+//                     },{
+//                         key: '선택3',
+//                         value : '값3'
+//                     }]
+//                 }
+//             }]
+//         }]
+//     })
+// })
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 //pageSize : 5, // 서버로 5개 요청
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             },
+//             // top toolbar
+//             tbar : [{
+//                 xtype : 'button',
+//                 text : '추가',
+//                 handler : function(btn){
+//                     alert('버튼 클릭');
+//                 }
+//             },{
+//                 xtype : 'combo',
+//                 listeners : {
+//                     change : function(obj, newValue, oldValue, eOpts){
+//                         console.log(newValue + "," + oldValue);
+//                     }
+//                 },
+//                 displayField: 'key',
+//                 valueField : 'value',
+//                 queryMode : 'local', // 하드코딩일 때는 반드시 설정!
+//                 store : {
+//                     fields : ['key', 'value'],
+//                     data : [{
+//                         key: '선택1',
+//                         value : '값1'
+//                     },{
+//                         key: '선택2',
+//                         value : '값2'
+//                     },{
+//                         key: '선택3',
+//                         value : '값3'
+//                     }]
+//                 }
+//             }]
+//         }]
+//     })
+// })
+
+
+
+
+
+
 Ext.onReady(function(){
     Ext.create("Ext.panel.Panel", {
         width : 800,
-        height : 200,
+        height : 500,
         renderTo : Ext.getBody(),
         layout : 'fit',
         items : [{
             xtype : 'grid',
-            plugins : 'cellediting',
-            //plugins : 'rowediting',
+            listeners : {
+                cellclick : function(obj, td, cellIndex, record, tr, rowIndex, e, eOpts){
+                    console.log(record.getData());
+                },
+                itemcontextmenu : function(obj, record, item, index, e, eOpts){
+                    console.log(record.get('dong'))
+                }
+            },
             columns : [{
                 text : '시',
                 dataIndex : 'si',
-                flex : 1,
-                editor : {
-                    xtype : 'textfield'
-                }
+                flex : 1
             },{
                 text : '군구',
                 dataIndex : 'gungu',
                 flex : 1,
-                editor : {
-                    xtype : 'textfield'
+                renderer : function(value){
+                    console.log(value);
+                    return value + "haha";
                 }
             },{
                 text : '동',
                 dataIndex : 'dong',
-                flex : 1,
-                editor : {
-                    xtype : 'textfield'
-                }
+                flex : 1
             }],
-            store : Ext.create("Ext.data.BufferedStore", {
+            store : {
                 autoLoad : true,
-                autoSync : true,
                 fields : ['si', 'gungu', 'dong'],
+                //pageSize : 5, // 서버로 5개 요청
                 proxy : {
                     type : 'ajax',
-                    // url : "/data/grid2.json",
-                    api : {
-                        //create : "/data/grid2.json",
-                        read : "/data/grid2.json"
-                        // update : "/data/grid2.json",
-                        //destroy : "/data/grid2.json",
-                    },
-                    reader : {
+                    url : "/data/grid2.json",
+                    reader:{
                         type : 'json',
                         rootProperty : 'data',
                         totalProperty : 'total'
-                    },
-                    writer : {
-                        type : 'json',
-                        rootProperty : 'data',
-                        writeAllFields : false, // 변경사항만 전달
-                        encode : true // 필수 속성
                     }
                 }
-            })
+            },
+            // top toolbar
+            tbar : [{
+                xtype : 'button',
+                text : '추가',
+                listeners : {
+                    click : function(btn){
+                        alert('버튼 클릭');
+                    }
+                }
+                // handler : function(btn){
+                //     alert('버튼 클릭');
+                // }
+            },{
+                xtype : 'combo',
+                listeners : {
+                    change : function(obj, newValue, oldValue, eOpts){
+                        console.log(newValue + "," + oldValue);
+                    }
+                },
+                displayField: 'key',
+                valueField : 'value',
+                queryMode : 'local', // 하드코딩일 때는 반드시 설정!
+                store : {
+                    fields : ['key', 'value'],
+                    data : [{
+                        key: '선택1',
+                        value : '값1'
+                    },{
+                        key: '선택2',
+                        value : '값2'
+                    },{
+                        key: '선택3',
+                        value : '값3'
+                    }]
+                }
+            }]
         }]
     })
 })
