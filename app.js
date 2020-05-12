@@ -745,6 +745,97 @@
 
 
 
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 200,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1
+//             }],
+//             store : Ext.create("Ext.data.BufferedStore", {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             })
+//         }]
+//     })
+// })
+
+
+
+
+// Ext.onReady(function(){
+//     Ext.create("Ext.panel.Panel", {
+//         width : 800,
+//         height : 200,
+//         renderTo : Ext.getBody(),
+//         layout : 'fit',
+//         items : [{
+//             xtype : 'grid',
+//             plugins : 'cellediting',
+//             //plugins : 'rowediting',
+//             columns : [{
+//                 text : '시',
+//                 dataIndex : 'si',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             },{
+//                 text : '군구',
+//                 dataIndex : 'gungu',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             },{
+//                 text : '동',
+//                 dataIndex : 'dong',
+//                 flex : 1,
+//                 editor : {
+//                     xtype : 'textfield'
+//                 }
+//             }],
+//             store : Ext.create("Ext.data.BufferedStore", {
+//                 autoLoad : true,
+//                 fields : ['si', 'gungu', 'dong'],
+//                 proxy : {
+//                     type : 'ajax',
+//                     url : "/data/grid2.json",
+//                     reader:{
+//                         type : 'json',
+//                         rootProperty : 'data',
+//                         totalProperty : 'total'
+//                     }
+//                 }
+//             })
+//         }]
+//     })
+// })
+
+
 Ext.onReady(function(){
     Ext.create("Ext.panel.Panel", {
         width : 800,
@@ -753,29 +844,53 @@ Ext.onReady(function(){
         layout : 'fit',
         items : [{
             xtype : 'grid',
+            plugins : 'cellediting',
+            //plugins : 'rowediting',
             columns : [{
                 text : '시',
                 dataIndex : 'si',
-                flex : 1
+                flex : 1,
+                editor : {
+                    xtype : 'textfield'
+                }
             },{
                 text : '군구',
                 dataIndex : 'gungu',
-                flex : 1
+                flex : 1,
+                editor : {
+                    xtype : 'textfield'
+                }
             },{
                 text : '동',
                 dataIndex : 'dong',
-                flex : 1
+                flex : 1,
+                editor : {
+                    xtype : 'textfield'
+                }
             }],
             store : Ext.create("Ext.data.BufferedStore", {
                 autoLoad : true,
+                autoSync : true,
                 fields : ['si', 'gungu', 'dong'],
                 proxy : {
                     type : 'ajax',
-                    url : "/data/grid2.json",
-                    reader:{
+                    // url : "/data/grid2.json",
+                    api : {
+                        //create : "/data/grid2.json",
+                        read : "/data/grid2.json"
+                        // update : "/data/grid2.json",
+                        //destroy : "/data/grid2.json",
+                    },
+                    reader : {
                         type : 'json',
                         rootProperty : 'data',
                         totalProperty : 'total'
+                    },
+                    writer : {
+                        type : 'json',
+                        rootProperty : 'data',
+                        writeAllFields : false, // 변경사항만 전달
+                        encode : true // 필수 속성
                     }
                 }
             })
